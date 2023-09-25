@@ -25,14 +25,14 @@ namespace OpenAI
 
         //TextToSpeech -scriptin kutsumiseksi tarvitaan
         public TextToSpeech textToSpeech;
-        public string _message;
+        public ChatMessage _message;
 
         //Whisper -scriptin kutsumiseksi tarvitaan
         public Whisper whisper;
+               
 
         // oman puheen vientiin Whisperille tarvitaan t‰t‰
         private string userInput;
-
 
         private void Start()
         {
@@ -48,10 +48,10 @@ namespace OpenAI
 
             // t‰ss‰ kohdassa message.Content sis‰lt‰‰ ensin l‰hetetyn, sitten vastaanotetun viestin
             //vied‰‰n t‰m‰ teksti TextToSpeech scriptiin kohtaan MakeAudioRequest
+            
+            _message = message;
 
-            _message = message.Content;
-
-
+            
             item.anchoredPosition = new Vector2(0, -height);
             LayoutRebuilder.ForceRebuildLayoutImmediate(item);
             height += item.sizeDelta.y;
@@ -65,11 +65,10 @@ namespace OpenAI
 
             userInput = whisper.whisperText;
 
-
             var newMessage = new ChatMessage()
             {
                 Role = "user",
-                //Content = inputField.text
+                // Content = inputField.text
                 Content = userInput
             };
             
@@ -112,14 +111,13 @@ namespace OpenAI
             button.enabled = true;
             inputField.enabled = true;
 
+
+
             //kutsutaan TextToSpeech - scriptist‰ MakeAudioRequest funktiota 
+            
 
-
-            textToSpeech.MakeAudioRequest(_message);
-
-
-
-
+            textToSpeech.MakeAudioRequest(_message.Content);
+            
 
         }
     }
