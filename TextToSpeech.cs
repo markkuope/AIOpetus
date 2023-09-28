@@ -15,14 +15,14 @@ public class TextToSpeech : MonoBehaviour
 
     private void Start()
     {
-        MakeAudioRequest("Hei, mit‰ kuuluu, minun nimeni on Linda.");
+        MakeAudioRequest("Hei, mit√§ kuuluu, minun nimeni on Linda.");
     }
 
 
 
     public async void MakeAudioRequest(string message)
     {
-        var credentials = new BasicAWSCredentials("AKIAYHQ3MV3I3IQCRQO4", "9QTReFhUoBRnrlczqbVnIVIR1rndrhVZqVnTg5aH");
+        var credentials = new BasicAWSCredentials("A*********************4", "9**************************H");
         var client = new AmazonPollyClient(credentials, RegionEndpoint.EUCentral1);
 
         var request = new SynthesizeSpeechRequest()
