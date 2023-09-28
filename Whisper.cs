@@ -79,14 +79,14 @@ namespace OpenAI
 
                 //tässä kohdassa message.text arvo on whisper AI:n transkriptio
                 //print(message.text);
-                // tämä arvo viedään AI:lle HelmiChatGPT scriptiin
+                // tämä arvo viedään AI:lle ChatGPT scriptiin
 
                 //whisperText = message.text;
 
-                //tässä käynnistetään HelmiChatGPT SendReply -funkio
+                //tässä käynnistetään ChatGPT SendReply -funkio
                 //ettei tarvitse painaa Send -nappia
 
-                //helmiChatGPT.SendReply();
+                //ChatGPT.SendReply();
 
             }
             else
